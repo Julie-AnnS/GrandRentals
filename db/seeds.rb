@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+10.times do
+  Grandparent.create!(
+    name: Faker::TvShows::BreakingBad.character,
+    age: rand(55...110),
+    abilities: "#{Faker::Hobby.activity, Faker::Hobby.activity, Faker::Hobby.activity}",
+    contradictions: "#{Faker::Hobby.activity, Faker::Hobby.activity, Faker::Hobby.activity}",
+    language:
+    phone_number:
+    location:
+  )
+end
