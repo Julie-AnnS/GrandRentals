@@ -10,5 +10,5 @@ class Grandparent < ApplicationRecord
   validates :contradictions, presence: true, length: { maximum: 500 }
   validates :language, presence: true
   validates :available, inclusion: [true, false]
-
 end
+
