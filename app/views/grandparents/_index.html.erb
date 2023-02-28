@@ -1,0 +1,14 @@
+<p style="color: blue"><%= notice %></p>
+
+<h1>Grandparents</h1>
+
+<div id="grandparents">
+  <% @grandparents.each do |grandparent| %>
+    <%= render grandparent %>
+    <p>
+      <%= link_to "Open listing", grandparent %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New listing", new_grandparent_path %>
