@@ -1,6 +1,6 @@
 class Grandparent < ApplicationRecord
   belongs_to :user
-  # has_many :bookings
+  has_many :bookings
   # has_many :reviews
 
   validates :first_name, presence: true, length: { minimum: 2 }
