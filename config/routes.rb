@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   get 'grandparents', to: 'grandparents#index'
 
-  get 'grandparents/:id', to: 'grandparents#show'
-
   get 'grandparents/new', to: 'grandparents#new'
 
-  get 'grandparents', to: 'grandparents#create'
+  get 'grandparents/:id', to: 'grandparents#show', as: :grandparent
+
+  post 'grandparents', to: 'grandparents#create'
+
 end

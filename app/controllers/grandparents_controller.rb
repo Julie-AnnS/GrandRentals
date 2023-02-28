@@ -14,9 +14,11 @@ class GrandparentsController < ApplicationController
 
   def create
     @grandparent = Grandparent.new(grandparent_params)
+    @grandparent.user = current_user
     if @grandparent.save
       redirect_to grandparent_path(@grandparent)
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end
@@ -38,7 +40,7 @@ class GrandparentsController < ApplicationController
   private
 
   def grandparent_params
-    params.require(:grandparent).permit(:first_name, :last_name, :age, :abilities, :contradictions, :language, :available)
+    params.require(:grandparent).permit(:name, :age, :abilities, :contradictions, :phone_number, :language, :location)
   end
 
   def grandparent
