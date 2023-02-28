@@ -1,0 +1,13 @@
+<%= simple_form_for(@grandparent) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :age %>
+    <%= f.input :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
