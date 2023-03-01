@@ -1,22 +1,27 @@
+<div class="container">
+  <h1><%= @grandparent.name %>'s Profile</h1>
 
-<h1><%= @grandparent.name %>'s Profile</h1>
+  <div>
+  <img url=(https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754) alt="Profile pic">
+  </div>
 
-<div>
-  <strong>Bio:</strong>
-  <%= @grandparent.bio %>
-</div>
+  <div class='bio'>
+    <strong>Bio:</strong>
+    <%= %>
+  </div>
 
-<div>
-  <strong>Talents:</strong>
-  <%= @grandparent.abilities(", ") %>
-</div>
+  <div class='details'>
+    <strong>Talents:</strong>
+    <%= @grandparent.abilities%>
+  </div>
 
-<div>
-  <strong>Limitations:</strong>
-  <%= @grandparent.contradictions(", ") %>
-</div>
+  <div class='details'>
+    <strong>Limitations:</strong>
+    <%= @grandparent.contradictions%>
+  </div>
 
-<div>
-  <strong>Mother tongue:</strong>
-  <%= @grandparent.language(", ") %>
+  <div class='details'>
+    <strong>Mother tongue:</strong>
+    <%= @grandparent.language %>
+  </div>
 </div>
