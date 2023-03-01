@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get 'grandparents', to: 'grandparents#index'
-
   get 'grandparents/new', to: 'grandparents#new'
-
   get 'grandparents/:id', to: 'grandparents#show', as: :grandparent
-
   post 'grandparents', to: 'grandparents#create'
+  get 'bookings', to: 'bookings#index', as: :bookings
+  #get 'grandparents/:id/bookings/new', to: 'bookings#new', as: :bookings_new
+  post 'grandparents/:id/bookings/', to: 'bookings#create'
+  get 'bookings/:id', to: 'bookings#show', as: :show_booking
+  resources :grandparents, only: [:show ] do
+    resources :bookings, only: [:new, :create]
+  end
 
 end

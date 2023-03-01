@@ -8,4 +8,5 @@ class Grandparent < ApplicationRecord
   validates :abilities, presence: true, length: { maximum: 500 }
   validates :contradictions, presence: true, length: { maximum: 500 }
   validates :language, presence: true
+  validates :daily_rate, presence: true, numericality: true
 end
