@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.grandparent = @grandparent
-    @booking.price = 12
+    @booking.price = @grandparent.daily_rate
     if @booking.save
       redirect_to bookings_path(@booking)
     else
@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :price)
   end
 
   def set_booking
