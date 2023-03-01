@@ -1,1 +1,22 @@
-<%= @grandparent.name %>
+
+<h1><%= @grandparent.name %>'s Profile</h1>
+
+<div>
+  <strong>Bio:</strong>
+  <%= @grandparent.bio %>
+</div>
+
+<div>
+  <strong>Talents:</strong>
+  <%= @grandparent.abilities(", ") %>
+</div>
+
+<div>
+  <strong>Limitations:</strong>
+  <%= @grandparent.contradictions(", ") %>
+</div>
+
+<div>
+  <strong>Mother tongue:</strong>
+  <%= @grandparent.language(", ") %>
+</div>
