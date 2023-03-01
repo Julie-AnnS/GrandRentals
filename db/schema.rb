@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_165844) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_170214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "price"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "user_id", null: false
+    t.bigint "grandparent_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grandparent_id"], name: "index_bookings_on_grandparent_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "grandparents", force: :cascade do |t|
     t.string "name"
@@ -25,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_165844) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "daily_rate"
     t.index ["user_id"], name: "index_grandparents_on_user_id"
   end
 
@@ -43,5 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_165844) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "grandparents"
+  add_foreign_key "bookings", "users"
   add_foreign_key "grandparents", "users"
 end

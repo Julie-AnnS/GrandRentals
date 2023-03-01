@@ -1,0 +1,13 @@
+<p style="color: blue"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<div id="bookings">
+  <% @bookings.each do |booking| %>
+    <li><%= "Booking with #{booking.grandparent.name} from #{booking.start_date} to #{booking.end_date}"%></li>
+    <li><%= "Price: #{booking.price}"%></li>
+    <p>
+      <%= link_to "Show this booking", show_booking_path(booking) %>
+    </p>
+  <% end %>
+</div>
