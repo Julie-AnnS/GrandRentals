@@ -1,6 +1,7 @@
 class GrandparentsController < ApplicationController
   before_action :grandparent, only: [:show, :edit, :update, :destroy]
 
+  
   def index
     @grandparents = Grandparent.all
   end

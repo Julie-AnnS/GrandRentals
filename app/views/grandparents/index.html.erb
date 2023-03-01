@@ -4,11 +4,10 @@
 
 <div id="grandparents">
   <% @grandparents.each do |grandparent| %>
-    <li><%= grandparent.name %></li>
-    <p>
-      <%= link_to "", grandparent %>
-    </p>
+    <li><%= link_to grandparent.name, grandparent %></li>
   <% end %>
 </div>
 
-<%= link_to "New listing", grandparents_new_path %>
+<p><%= link_to "Create a grandparents", grandparents_new_path %></p>
+
+<p><%= link_to "Go back to the home page", root_path %></p>
