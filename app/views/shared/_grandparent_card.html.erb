@@ -1,9 +1,12 @@
 <div class="col-xs-12 col-sm-6 col-md-4">
   <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), img src='app/assets/images/istockphoto-1388964325-170667a.jpg' alt="grandparent">
-    <div class="card-category">Grandparent1</div>
+    <div class="card-category"> </div>
     <div class="card-description">
-      <h3>Grandparent 1</h3>
-      <%= link_to grandparent.name, grandparent %>
+    <img src="app/assets/images/istockphoto-1388964325-170667a.jpg"  class="card-user" alt="Grand1">
+      <h3><%= link_to grandparent.name, grandparent %></h3>
+
+    <%# <a href="flats/ssaunier.html" class="card-link"></a> %>
+      <p> Daily rate: </p>
       <p>Placeholder1</p>
       <p class="rating">
           <i class="fa fa-star" style="color: #ffb400"></i>
@@ -13,7 +16,5 @@
           <i class="fa fa-star" style="color: #cacccd"></i>
       </p>
     </div>
-    <img src="app/assets/images/istockphoto-1388964325-170667a.jpg"  class="card-user" alt="Grand1">
-    <%# <a href="flats/ssaunier.html" class="card-link"></a> %>
   </div>
 </div>
