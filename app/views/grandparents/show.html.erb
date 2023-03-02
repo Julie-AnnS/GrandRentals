@@ -5,11 +5,6 @@
   <img url=(https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754) alt="Profile pic">
   </div>
 
-  <div class='bio'>
-    <strong>Bio:</strong>
-    <%= %>
-  </div>
-
   <div class='details'>
     <strong>Talents:</strong>
     <%= @grandparent.abilities%>
@@ -24,15 +19,24 @@
     <strong>Mother tongue:</strong>
     <%= @grandparent.language %>
   </div>
-</div>
 
+  <div class='details'>
+    <strong>Price $</strong>
+    <%= @grandparent.daily_rate %>
+  </div>
+
+  <div class='details'>
+    <strong>Location:</strong>
+    <%= @grandparent.location %>
+  </div>
+</div>
 
 <p><%= link_to "Make a booking:", new_grandparent_booking_path(@grandparent) %></p>
 
 <% if @grandparent.user == current_user %>
   <%= link_to "Edit", edit_grandparent_path(@grandparent)%>
   <%= link_to "Delete", grandparent_path(@grandparent),
-data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %> 
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 <% end %>
 
 <p><%= link_to "Go back to grandparents list:", grandparents_path %></p>
