@@ -10,10 +10,15 @@ Rails.application.routes.draw do
   get 'grandparents/:id', to: 'grandparents#show', as: :grandparent
   post 'grandparents', to: 'grandparents#create'
   get 'bookings', to: 'bookings#index', as: :bookings
-  #get 'grandparents/:id/bookings/new', to: 'bookings#new', as: :bookings_new
   post 'grandparents/:id/bookings/', to: 'bookings#create'
+  # get 'grandparents/:id/edit', to: "grandparents#edit", as: :edit_grandparent
+  # patch 'grandparents/:id', to: "grandparents#update"
+  delete "grandparents/:id", to: "grandparents#destroy"
+  get 'my_grandparents', to: 'grandparents#mygrandparents', as: :my_grandparents
+  #get 'grandparents/:id/bookings/new', to: 'bookings#new', as: :bookings_new
+
   get 'bookings/:id', to: 'bookings#show', as: :show_booking
-  resources :grandparents, only: [:show ] do
+  resources :grandparents, only: [:show, :edit, :update ] do
     resources :bookings, only: [:new, :create]
   end
 
