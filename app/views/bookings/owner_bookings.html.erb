@@ -1,6 +1,6 @@
 <p style="color: blue"><%= notice %></p>
 
-<h1>Bookings</h1>
+<h1>Requests for me</h1>
 
 <div id="bookings">
   <% @bookings.each do |booking| %>
@@ -9,10 +9,8 @@
     <li><%= "Status: #{booking.status}"%></li>
     <p>
       <%= link_to "Show this booking", show_booking_path(booking) %>
-      <% if booking.grandparent.user == current_user %>
-        <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
-        <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
-      <% end %>
+      <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
+      <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
     </p>
   <% end %>
 </div>

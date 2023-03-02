@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: %i[show edit update destroy accept decline]
 
   def index
     @bookings = Booking.where(user: current_user)
+  end
+
+  def owner_bookings
+    @bookings = Booking.where(grandparent: current_user.grandparents)
   end
 
   def show
@@ -38,6 +42,27 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, status: :see_other
+  end
+
+# PATCH /offers/:id/accept
+  # @TODO authorize that the user should actually be allowed the offer
+  def accept
+    if @booking.accepted!
+      redirect_to bookings_path(@booking), notice: 'Booking accepted'
+    else
+      redirect_to bookings_path(@booking), notice: 'Booking could not be accepted - please try again'
+    end
+  end
+
+    # PATCH /offers/:id/reject
+  # @TODO authorize that the user should actually be reject the offer
+  def decline
+    if @booking.declined!
+      redirect_to bookings_path, notice: 'Booking rejected'
+      @booking.destroy
+    else
+      redirect_to bookings_path, notice: 'Booking could not be rejected - please try again'
+    end
   end
 
   private

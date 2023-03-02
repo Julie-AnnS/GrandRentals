@@ -17,4 +17,12 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  get 'requests', to: 'bookings#owner_bookings'
+
+  patch 'bookings/:id/accept', to: 'bookings#accept', as: :booking_accept
+  patch 'bookings/:id/decline', to: 'bookings#decline', as: :booking_decline
+  # resources :bookings, only: [] do
+  #   patch :accept
+  #   patch :decline
+  # end
 end
