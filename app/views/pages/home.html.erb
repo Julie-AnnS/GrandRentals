@@ -1,136 +1,15 @@
-<html><head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GrandRentals!</title>
-    <link href="stylesheets/application-4f606044.css" rel="stylesheet">
-    <script src="javascripts/application-93de88c9.js"></script>
-    <%# <img src="" class="card" alt="Angela Lansbury"> %>
- </head>
-
-
-<%# <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), img src='app/assets/images/istockphoto-1388964325-170667a.jpg' alt="grandparent" >
-  <div class="banner-content">
-    <h1>GRAND RENTALS!!</h1>
-     <p>Are you feeling lonely? Rent a Grandparent!!</p>
-     <form action="#" class="form-inline">
-       <input type="text" class="form-control input-lg" placeholder="Where?">
-       <input type="text" class="form-control input-lg" placeholder="When?">
-       <select name="" id="" class="form-control input-lg">
-       </select>
-       <input type="submit" class="btn btn-primary btn-lg" value="Search">
-     </form>
+<div class="main-container">
+  <div class="h1-search-bar">
+    <h1>Feel lonely? Rent grandparents!</h1>
+    <input type="text" class="search-bar" placeholder="Search for grandparents...">
+  <div class="container" id="grandparents">
+  <h2 class="text-center">Featured grandparents</h2>
+  <div class="row">
+    <% @featured_grandparents.each do |grandparent| %>
+      <%= render "shared/grandparent_card", grandparent: grandparent %>
+    <% end %>
   </div>
-</div> %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <%# <%# <div class="main-container">
-#   <div class="h1-search-bar">
-#     <h1>Feel alone ? Rent Grandparents :)</h1>    <input type="text" class="search-bar" placeholder="Search for grandparents...">
-#   <div class="container" id="grandparents">
-#   <h2 class="text-center">Recent Grandparents</h2>
-#   <div class="row"> %>
-      <%# <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), img src='app/assets/images/istockphoto-1388964325-170667a.jpg' alt="grandparent">
-          <div class="card-category">Lives in St-Clin-Clin des Meu-Meu</div>
-          <div class="card-description">
-            <h3>Angela Lansbury</h3>
-            <p>"I like to write murder mysteries and drink tea!"</p>
-            <p class="rating">
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-            </p>
-          </div> %>
-          <%# <%= image_tag ("angelalansbury.jpg"), class: "card-user"%>
-          <%# <img src="https://i.guim.co.uk/img/media/1508208ef53c37d4904e279f397cfa034ec22db5/0_0_5424_3253/master/5424.jpg?width=620&quality=45&dpr=2&s=none" class="card-user" alt="Angela Lansbury"> %>
-
-
-
-
-        <%# </div> %>
-      <%# </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), img src='app/assets/images/istockphoto-1388964325-170667a.jpg' alt=grandparent">
-          <div class="card-category">Lives in Cote-des-Neiges</div>
-          <div class="card-description">
-            <h3>Peter Falk</h3>
-            <p>"I like to watch reruns of Columbo"</p>
-            <p class="rating">
-                <i class="fa fa-star" style="color: #ffb400"></i> %>
-                <%# <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400 "></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-            </p>
-          </div>
-            <%# <%= image_tag ("peterfalk3.jpg"), class: "card-user"%>
-            <%# <img src="https://www.looper.com/img/gallery/the-last-movie-peter-falk-was-in-before-he-died/l-intro-1644801556.jpg" class="card-user" alt="Peter Falk"> %>
-
-
-
-        <%# </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), img src='app/assets/images/istockphoto-1388964325-170667a.jpg' alt=grandparent">
-          <div class="card-category">Lives in Brossard</div>
-          <div class="card-description">
-            <h3>James Earl Jones</h3>
-            <p>"I like go to the zoo and see the Lions!</p>
-            <p class="rating">
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-                <i class="fa fa-star" style="color: #ffb400"></i>
-            </p>
-          </div> %>
-          <%# <%= image_tag ("jamesearljones1.jpg"), class: "card-user"%>
-          <%# <img src="data:image/jpeg;base64,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" class="card-user" alt="James Earl Jones">
-        </div>
-      </div>
-  </div>
-</div> %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))url(https://files.slack.com/files-pri/T02NE0241-F04R1B566JK/image.png)">
