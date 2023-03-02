@@ -1,9 +1,15 @@
 class GrandparentsController < ApplicationController
   before_action :grandparent, only: [:show, :edit, :update, :destroy]
 
-  
+
   def index
     @grandparents = Grandparent.all
+    @markers = @grandparents.geocoded.map do |grandparent|
+      {
+        lat: grandparent.latitude,
+        lng: grandparent.longitude
+      }
+    end
   end
 
   def show
