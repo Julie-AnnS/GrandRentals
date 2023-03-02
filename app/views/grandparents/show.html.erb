@@ -1,7 +1,40 @@
-<h1> <%= @grandparent.name %> </h1>
-<h2> Age: </h2> <%= @grandparent.age %>
-<h2> Language: </h2> <%= @grandparent.language %>
-<h2> Abilities: </h2> <%= @grandparent.abilities %>
-<h2> Limitations: </h2> <%= @grandparent.contradictions %>
- <%= @grandparent.phone_number %>
- <%= @grandparent.location %> 
+
+<div class="container">
+  <h1><%= @grandparent.name %>'s Profile</h1>
+
+  <div>
+  <img url=(https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754) alt="Profile pic">
+  </div>
+
+  <div class='bio'>
+    <strong>Bio:</strong>
+    <%= %>
+  </div>
+
+  <div class='details'>
+    <strong>Talents:</strong>
+    <%= @grandparent.abilities%>
+  </div>
+
+  <div class='details'>
+    <strong>Limitations:</strong>
+    <%= @grandparent.contradictions%>
+  </div>
+
+  <div class='details'>
+    <strong>Mother tongue:</strong>
+    <%= @grandparent.language %>
+  </div>
+</div>
+
+
+<p><%= link_to "Make a booking:", new_grandparent_booking_path(@grandparent) %></p>
+
+<% if @grandparent.user == current_user %>
+  <%= link_to "Edit", edit_grandparent_path(@grandparent)%>
+  <%= link_to "Delete", grandparent_path(@grandparent),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+<% end %>
+
+<p><%= link_to "Go back to grandparents list:", grandparents_path %></p>
+

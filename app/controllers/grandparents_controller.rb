@@ -1,7 +1,7 @@
 class GrandparentsController < ApplicationController
   before_action :grandparent, only: [:show, :edit, :update, :destroy]
 
-  
+
   def index
     @grandparents = Grandparent.all
   end
@@ -19,18 +19,19 @@ class GrandparentsController < ApplicationController
     if @grandparent.save
       redirect_to grandparent_path(@grandparent)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
 
-  # def edit
-  # end
+  def edit
+    @grandparent = Grandparent.find(params[:id])
+  end
 
-  # def update
-  #   grandparent.update(grandparent_params)
-  #   redirect_to grandparent_path(@grandparent)
-  # end
+  def update
+    @grandparent = Grandparent.find(params[:id])
+    @grandparent.update(grandparent_params)
+    redirect_to grandparent_path(@grandparent)
+  end
 
   def destroy
     @grandparent = Grandparent.find(params[:id])
@@ -38,10 +39,16 @@ class GrandparentsController < ApplicationController
     redirect_to grandparents_path, status: :see_other
   end
 
+  def mygrandparents
+    @grandparents = Grandparent.where(user: current_user)
+  end
+
+
+
   private
 
   def grandparent_params
-    params.require(:grandparent).permit(:name, :age, :abilities, :contradictions, :phone_number, :language, :location)
+    params.require(:grandparent).permit(:name, :age, :abilities, :contradictions, :phone_number, :language, :location, :daily_rate)
   end
 
   def grandparent
