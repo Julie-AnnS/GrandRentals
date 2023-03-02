@@ -18,7 +18,7 @@ User.all.each do |user|
       contradictions: "#{Faker::Hobby.activity}, #{Faker::Hobby.activity}, #{Faker::Hobby.activity}",
       language: Faker::Nation.language,
       phone_number: Faker::PhoneNumber.cell_phone,
-      location: Faker::Space.planet,
+      location: Faker::Address.country,
       daily_rate: Faker::Number.between(from: 30, to: 400)
     )
     gp.user = user

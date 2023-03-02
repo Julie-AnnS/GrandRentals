@@ -49,6 +49,8 @@ gem "devise"
 
 gem "faker"
 
+gem "geocoder"
+
 gem "dotenv-rails", groups: [:development, :test]
 
 gem "cloudinary"
