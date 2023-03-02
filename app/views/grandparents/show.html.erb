@@ -26,5 +26,13 @@
   </div>
 </div>
 
-<%= link_to "Make a booking:", new_grandparent_booking_path(@grandparent) %>
-<%= link_to "Go back to grandparents list:", grandparents_path %>
+
+<p><%= link_to "Make a booking:", new_grandparent_booking_path(@grandparent) %></p>
+
+<% if @grandparent.user == current_user %>
+  <%= link_to "Edit", edit_grandparent_path(@grandparent)%>
+  <%= link_to "Delete", grandparent_path(@grandparent),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %> 
+<% end %>
+
+<p><%= link_to "Go back to grandparents list:", grandparents_path %></p>

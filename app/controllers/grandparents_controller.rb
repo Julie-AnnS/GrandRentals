@@ -29,19 +29,27 @@ class GrandparentsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+    @grandparent = Grandparent.find(params[:id])
+  end
 
-  # def update
-  #   grandparent.update(grandparent_params)
-  #   redirect_to grandparent_path(@grandparent)
-  # end
+  def update
+    @grandparent = Grandparent.find(params[:id])
+    @grandparent.update(grandparent_params)
+    redirect_to grandparent_path(@grandparent)
+  end
 
   def destroy
     @grandparent = Grandparent.find(params[:id])
     @grandparent.destroy
     redirect_to grandparents_path, status: :see_other
   end
+
+  def mygrandparents
+    @grandparents = Grandparent.where(user: current_user)
+  end
+
+
 
   private
 
