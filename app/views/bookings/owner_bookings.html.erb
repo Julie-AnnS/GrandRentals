@@ -9,8 +9,10 @@
     <li><%= "Status: #{booking.status}"%></li>
     <p>
       <%= link_to "Show this booking", show_booking_path(booking) %>
-      <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
-      <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
+      <% if booking.pending? %>
+        <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
+        <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
+      <% end %>
     </p>
   <% end %>
 </div>
