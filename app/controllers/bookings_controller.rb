@@ -48,9 +48,9 @@ class BookingsController < ApplicationController
   # @TODO authorize that the user should actually be allowed the offer
   def accept
     if @booking.accepted!
-      redirect_to bookings_path(@booking), notice: 'Booking accepted'
+      redirect_to requests_path, notice: 'Booking accepted'
     else
-      redirect_to bookings_path(@booking), notice: 'Booking could not be accepted - please try again'
+      redirect_to requests_path, notice: 'Booking could not be accepted - please try again'
     end
   end
 
