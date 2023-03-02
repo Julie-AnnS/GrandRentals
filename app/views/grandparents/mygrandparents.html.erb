@@ -1,0 +1,7 @@
+<h1>hello from mgp page</h1>
+
+ <% @grandparents.each do |grandparent| %>
+    <li>
+      <%= link_to grandparent.name, grandparent %>
+    </li>
+  <% end %>

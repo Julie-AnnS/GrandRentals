@@ -33,4 +33,11 @@
     <strong>Daily Rate:</strong>
     <%= grandparent.daily_rate %>
   </p>
+
+  <% if grandparent.user == current_user %>
+        <%= button_to “Edit”, edit_grandparent_path %>
+        <%= button_to “Delete”, grandparent_path(@grandparent),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+      <% end %>
+  
 </div>
