@@ -22,22 +22,22 @@ User.all.each do |user|
     gp.user = user
     gp.save!
   end
-
-  # 1st scenario - renter
-  renter = User.create!(email: "bob@bob.com", password: "bob123")
-  # 2nd scenario - owner
-  owner = User.create!(email: "ihatemygrandma@gmail.com", password: "grandma123")
-
-  owner_grandma = Grandparent.create!(
-    name: "Gertrude", age: 102, abilities: "Knitting, Crocheting, Baking",
-    contradictions: "Running, Climbing down stairs",
-    language: "English", phone_number: 1234567890, location: "Cote-Saint-Luc")
-
-  owner_grandpa = Grandparent.create!(
-    name: "Benoit", age: 72, abilities: "Cooking, Walking down long distances",
-    contradictions: "Bad language, Smoking",
-    language: "French, English", phone_number: 1726162727, location: "Paris")
-
-  owner_grandpa.user = owner
-  owner_grandma.user = owner
 end
+  # 1st scenario - renter
+  # renter = User.create!(email: "bob@bob.com", password: "bob123")
+  # # 2nd scenario - owner
+  # owner = User.create!(email: "ihatemygrandma@gmail.com", password: "grandma123")
+
+  # owner_grandma = Grandparent.create!(
+  #   name: "Gertrude", age: 102, abilities: "Knitting, Crocheting, Baking",
+  #   contradictions: "Running, Climbing down stairs",
+  #   language: "English", phone_number: 1234567890, location: "Cote-Saint-Luc")
+
+  # owner_grandpa = Grandparent.create!(
+  #   name: "Benoit", age: 72, abilities: "Cooking, Walking down long distances",
+  #   contradictions: "Bad language, Smoking",
+  #   language: "French, English", phone_number: 1726162727, location: "Paris")
+
+  # owner_grandpa.user = owner
+  # owner_grandma.user = owner
+# end
