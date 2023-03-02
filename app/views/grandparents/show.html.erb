@@ -5,11 +5,6 @@
   <img url=(https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754) alt="Profile pic">
   </div>
 
-  <div class='bio'>
-    <strong>Bio:</strong>
-    <%= %>
-  </div>
-
   <div class='details'>
     <strong>Talents:</strong>
     <%= @grandparent.abilities%>
@@ -23,6 +18,16 @@
   <div class='details'>
     <strong>Mother tongue:</strong>
     <%= @grandparent.language %>
+  </div>
+
+  <div class='details'>
+    <strong>Price $</strong>
+    <%= @grandparent.daily_rate %>
+  </div>
+
+  <div class='details'>
+    <strong>Location:</strong>
+    <%= @grandparent.location %>
   </div>
 </div>
 
