@@ -24,8 +24,6 @@ User.all.each do |user|
     gp.user = user
     gp.save!
   end
-<<<<<<< HEAD
-=======
 
   # 1st scenario - renter
   # renter = User.create!(email: "bob@bob.com", password: "bob123")
@@ -44,7 +42,6 @@ User.all.each do |user|
 
   # owner_grandpa.user = owner
   # owner_grandma.user = owner
->>>>>>> d99d21b6184b171473c9c0464750337107e7b609
 end
   # 1st scenario - renter
   # renter = User.create!(email: "bob@bob.com", password: "bob123")
