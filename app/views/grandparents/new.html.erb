@@ -2,8 +2,4 @@
 
 <%= render "form", grandparent: @grandparent %>
 
-<br>
-  <p><%= link_to "Cancel", grandparents_path %></p>
-
-
-<div style="height:100vh">  </div>
+<p><%= button_to 'Go back', grandparents_path, method: :get %></p>
