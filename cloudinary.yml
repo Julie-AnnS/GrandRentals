@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dkitmi74n
+  api_key: '682496467851352'
+  api_secret: B7RaZxi77eTIJSE5s1F830ch-Tc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dkitmi74n
+  api_key: '682496467851352'
+  api_secret: B7RaZxi77eTIJSE5s1F830ch-Tc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dkitmi74n
+  api_key: '682496467851352'
+  api_secret: B7RaZxi77eTIJSE5s1F830ch-Tc
+  enhance_image_tag: true
+  static_image_support: false
