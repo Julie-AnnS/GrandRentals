@@ -1,6 +1,11 @@
-<p style="color: blue"><%= notice %></p>
-
- <input type="text" class="search-bar" placeholder="Search for grandparents...">
+<%= form_with url: grandparents_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a grandparent"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <h1>Grandparents near you</h1>
 

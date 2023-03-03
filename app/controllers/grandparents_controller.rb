@@ -10,6 +10,12 @@ class GrandparentsController < ApplicationController
         lng: grandparent.longitude
       }
     end
+
+    if params[:query].present?
+      @grandparents = Grandparent.where(location: params[:query])
+    else
+      @grandparents = Grandparent.all
+    end
   end
 
   def show
