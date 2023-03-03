@@ -12,7 +12,7 @@ class GrandparentsController < ApplicationController
     end
 
     if params[:query].present?
-      @grandparents = Grandparent.where(location: params[:query])
+      @grandparents = Grandparent.search_by_name_age_abilities_language_location(params[:query])
     else
       @grandparents = Grandparent.all
     end
