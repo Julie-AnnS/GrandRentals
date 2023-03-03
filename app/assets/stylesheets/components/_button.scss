@@ -1,10 +1,17 @@
 .btn1 {
-  background-color: aqua;
-  color: rgb(255, 248, 118);
+  background-color:rgb(250, 247, 215);
+  color: #cd346e;
   padding: 8px 24px;
   border-radius: 8px;
   text-align: center;
   border-color: #82485e;
+  box-shadow: 3px 3px 5px rgb(190, 186, 186);
+  font-weight: bold;
+  margin-left: 50px;
+}
 
-  transition: background 0.3s ease;
+.btn:hover {
+  opacity: 1;
+  background-color: rgb(241, 173, 77);
+  color: rgb(50, 49, 49);
 }

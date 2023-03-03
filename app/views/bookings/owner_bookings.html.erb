@@ -10,8 +10,8 @@
     <p>
       <%= link_to "Show this booking", show_booking_path(booking) %>
       <% if booking.pending? %>
-        <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
-        <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
+        <%= button_to "Accept", booking_accept_path(booking), class: 'btn1', method: :patch %>
+        <%= button_to "Decline", booking_decline_path(booking), class: 'btn1', method: :patch %>
       <% end %>
     </p>
   <% end %>

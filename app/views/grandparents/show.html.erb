@@ -13,7 +13,7 @@
 
   <div class='details'>
     <strong>Limitations:</strong>
-    <%= @grandparent.contradictions%>
+    <%= @grandparent.limitations%>
   </div>
 
   <div class='details'>
@@ -33,11 +33,11 @@
 </div>
 
 
-<p><%= button_to 'Make a booking', new_grandparent_booking_path(@grandparent), method: :get %></p>
+<p><%= button_to 'MAKE A BOOKING', new_grandparent_booking_path(@grandparent), class: 'btn1', method: :get %></p>
 
 <% if @grandparent.user == current_user %>
-  <p><%= button_to 'Edit', edit_grandparent_path(@grandparent), method: :get %></p>
-  <p><%= button_to 'Delete', grandparent_path(@grandparent), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete %></p>
+  <p><%= button_to 'EDIT', edit_grandparent_path(@grandparent), class: "btn1", method: :get %></p>
+  <p><%= button_to 'DELETE', grandparent_path(@grandparent), class: 'btn1"', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete %></p>
 <% end %>
 
-<p><%= button_to 'Back to grandparents', grandparents_path, method: :get %></p>
+<p><%= button_to 'GO BACK TO GRANDPARENTS', grandparents_path, class: 'btn1', method: :get %></p>
