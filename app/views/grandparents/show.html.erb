@@ -3,7 +3,7 @@
   <h1><%= @grandparent.name %>'s Profile</h1>
 
   <div>
-  <img src="https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754" alt="Profile pic">
+    <%= cl_image_tag @grandparent.photo.key, class: "card-user", width: 160, height: 190 %>
   </div>
 
   <div class='details'>
@@ -41,3 +41,4 @@
 <% end %>
 
 <p><%= button_to 'Back to grandparents', grandparents_path, method: :get %></p>
+<div style="height:100vh"></div>

@@ -1,13 +1,16 @@
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16 px;
+  grid-gap: 16px;
   border: 2px solid #ddd;
   border-radius: 10px;
   border-color: #82485e;
   padding: 10px;
   margin: 20px auto 70px;
-  max-width: 500px;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 500px;
+  max-height: 500px;
   background-color:#e9fafa;
   display: inline-block;
 }
