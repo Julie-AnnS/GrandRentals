@@ -32,8 +32,9 @@
   </div>
 </div>
 
-
+<% if @grandparent.user != current_user %>
 <p><%= button_to 'Make a booking', new_grandparent_booking_path(@grandparent), method: :get %></p>
+<% end %>
 
 <% if @grandparent.user == current_user %>
   <p><%= button_to 'Edit', edit_grandparent_path(@grandparent), method: :get %></p>
