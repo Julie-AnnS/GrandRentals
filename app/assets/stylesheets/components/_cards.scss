@@ -1,4 +1,4 @@
-.card {
+.card1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -13,4 +13,21 @@
   max-height: 500px;
   background-color:#e9fafa;
   display: inline-block;
+}
+
+
+.card2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16 px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  border-color: #82485e;
+  padding: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color:#e9fafa;
+  display: inline-block;
+  width: 400px;
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
