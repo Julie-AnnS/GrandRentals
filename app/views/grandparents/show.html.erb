@@ -3,7 +3,7 @@
   <h1><%= @grandparent.name %>'s Profile</h1>
 
   <div>
-  <img src="https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754" alt="Profile pic">
+    <%= cl_image_tag @grandparent.photo.key, class: "card-user", width: 160, height: 190 %>
   </div>
 
   <div class='details'>
@@ -32,12 +32,23 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 
 <p><%= button_to 'MAKE A BOOKING', new_grandparent_booking_path(@grandparent), class: 'btn1', method: :get %></p>
+=======
+<% if @grandparent.user != current_user %>
+<p><%= button_to 'Make a booking', new_grandparent_booking_path(@grandparent), method: :get %></p>
+<% end %>
+>>>>>>> 693d0f877d9c7e87bdc5a175ee8222637dea13ec
 
 <% if @grandparent.user == current_user %>
   <p><%= button_to 'EDIT', edit_grandparent_path(@grandparent), class: "btn1", method: :get %></p>
   <p><%= button_to 'DELETE', grandparent_path(@grandparent), class: 'btn1"', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete %></p>
 <% end %>
 
+<<<<<<< HEAD
 <p><%= button_to 'GO BACK TO GRANDPARENTS', grandparents_path, class: 'btn1', method: :get %></p>
+=======
+<p><%= button_to 'Back to grandparents', grandparents_path, method: :get %></p>
+<div style="height:100vh"></div>
+>>>>>>> 693d0f877d9c7e87bdc5a175ee8222637dea13ec

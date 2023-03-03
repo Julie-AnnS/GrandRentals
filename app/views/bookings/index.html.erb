@@ -4,7 +4,9 @@
 
 <div id="bookings">
   <% @bookings.each do |booking| %>
-    <li><%= "Booking with #{booking.grandparent.name} from #{booking.start_date} to #{booking.end_date}"%></li>
+    <li><%= "Booking with : #{booking.grandparent.name}"%></li>
+     <li><%= "from #{booking.start_date}"%></li>
+     <li><%= "to #{booking.end_date}"%></li>
     <li><%= "Price: $#{booking.price}"%></li>
     <li><%= "Status: #{booking.status}"%></li>
     <p>
@@ -16,5 +18,4 @@
     </p>
   <% end %>
 </div>
-
-<div style="height:100vh">  </div>
+<div style="height:100vh"></div>
