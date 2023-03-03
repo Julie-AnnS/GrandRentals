@@ -10,6 +10,12 @@ class GrandparentsController < ApplicationController
         lng: grandparent.longitude
       }
     end
+
+    if params[:query].present?
+      @grandparents = Grandparent.search_by_name_age_abilities_language_location(params[:query])
+    else
+      @grandparents = Grandparent.all
+    end
   end
 
   def show
