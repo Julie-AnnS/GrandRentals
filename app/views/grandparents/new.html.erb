@@ -2,5 +2,5 @@
 
 <%= render "form", grandparent: @grandparent %>
 
-<br>
-  <p><%= link_to "Cancel", grandparents_path %></p>
+
+<p><%= button_to 'Cancel', grandparents_path, method: :get %></p>
