@@ -32,14 +32,12 @@
   </div>
 </div>
 
-  <%= link_to "Make a booking", new_grandparent_booking_path(@grandparent) %>
 
+<p><%= button_to 'Make a booking', new_grandparent_booking_path(@grandparent), method: :get %></p>
 
 <% if @grandparent.user == current_user %>
-  <%= link_to "Edit", edit_grandparent_path(@grandparent)%>
-  <%= link_to "Delete", grandparent_path(@grandparent),
-data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+  <p><%= button_to 'Edit', edit_grandparent_path(@grandparent), method: :get %></p>
+  <p><%= button_to 'Delete', grandparent_path(@grandparent), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete %></p>
 <% end %>
 
-
-  <%= link_to "Go back to grandparents list", grandparents_path %></p>
+<p><%= button_to 'Back to grandparents', grandparents_path, method: :get %></p>

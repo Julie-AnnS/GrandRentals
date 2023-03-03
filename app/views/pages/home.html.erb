@@ -1,15 +1,15 @@
-<div class="main-container">
+<%# <div class="main-container"> %>
   <div class="h1-search-bar">
-    <h1>Feel lonely? Rent grandparents!</h1>
+    <h4>Feel lonely? Rent grandparents!</h4>
     <input type="text" class="search-bar" placeholder="Search for grandparents...">
-  <div class="container" id="grandparents">
-  <h2 class="text-center">Featured grandparents</h2>
+  <%# <div class="container" id="grandparents"> %>
+  <%# <h2 class="text-center">Featured grandparents</h2>
   <div class="row">
     <% @featured_grandparents.each do |grandparent| %>
-      <%= render "shared/grandparent_card", grandparent: grandparent %>
-    <% end %>
-  </div>
-</div>
+      <%# <%= render "shared/grandparent_card", grandparent: grandparent %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
 
 
 <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))url(https://files.slack.com/files-pri/T02NE0241-F04R1B566JK/image.png)">
@@ -34,12 +34,12 @@
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
-      <div class="footer-copyright">
+      <%# <div class="footer-copyright">
         This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-      </div>
-    </div> %>
+      </div> %>
+    </div>
 <%#
 </body>
 </html> %>
 
-<div style="height:100vh">  </div>
+<div style="height:100vh"> </div>
