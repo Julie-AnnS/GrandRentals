@@ -4,17 +4,18 @@
 
 <div id="bookings">
   <% @bookings.each do |booking| %>
-    <li><%= "Booking with #{booking.grandparent.name} from #{booking.start_date} to #{booking.end_date}"%></li>
+    <li><%= "Booking with : #{booking.grandparent.name}"%></li>
+     <li><%= "from #{booking.start_date}"%></li>
+     <li><%= "to #{booking.end_date}"%></li>
     <li><%= "Price: $#{booking.price}"%></li>
     <li><%= "Status: #{booking.status}"%></li>
     <p>
-      <%= link_to "Show this booking", show_booking_path(booking) %>
+      <%= button_to "BOOKING DETAILS", show_booking_path(booking), class: 'btn1' %>
       <% if booking.grandparent.user == current_user %>
-        <%= button_to "Accept", booking_accept_path(booking), method: :patch %>
-        <%= button_to "Decline", booking_decline_path(booking), method: :patch %>
+        <%= button_to "Accept", booking_accept_path(booking), class: 'btn1', method: :patch %>
+        <%= button_to "Decline", booking_decline_path(booking), class: 'btn1', method: :patch %>
       <% end %>
     </p>
   <% end %>
 </div>
-
-<div style="height:100vh">  </div>
+<div style="height:100vh"></div>

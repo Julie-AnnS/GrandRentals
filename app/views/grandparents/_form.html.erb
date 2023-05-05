@@ -1,6 +1,6 @@
 <%= simple_form_for(@grandparent) do |f| %>
 
-  <div class="form-inputs">
+  <div class="card2">
     <%= f.input :name %>
     <%= f.input :language %>
     <%= f.input :age %>
@@ -9,8 +9,6 @@
     <%= f.input :phone_number %>
     <%= f.input :location %>
     <%= f.input :daily_rate %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn1' %>
   </div>
 <% end %>
